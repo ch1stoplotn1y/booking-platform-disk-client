@@ -16,7 +16,7 @@ import AdminPanelPage from "./pages/AdminPanelPage.jsx";
 import EditUserPage from "./pages/EditUserPage.jsx";
 import EditPropertyPage from "./pages/EditPropertyPage.jsx";
 import EditBookingPage from "./pages/EditBookingPage.jsx";
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "http://sh4rk07h.beget.tech";
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -54,10 +54,6 @@ function App() {
                         path="/profile/admin/edit-user/:id"
                         element={<EditUserPage />}
                     />
-                    {/* <Route
-                        path="/profile/admin/edit-property/:id"
-                        element={<EditPropertyPage />}
-                    /> */}
                     <Route
                         path="/profile/admin/edit-booking/:id"
                         element={<EditBookingPage />}

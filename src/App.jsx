@@ -12,6 +12,10 @@ import AddPropertyForm from "./pages/AddPropertyForm.jsx";
 import SinglePlacePage from "./pages/SinglePropertyPage.jsx";
 import SingleBookingPage from "./pages/SingleBookingPage.jsx";
 import BookingsPage from "./pages/BookingsPage.jsx";
+import AdminPanelPage from "./pages/AdminPanelPage.jsx";
+import EditUserPage from "./pages/EditUserPage.jsx";
+import EditPropertyPage from "./pages/EditPropertyPage.jsx";
+import EditBookingPage from "./pages/EditBookingPage.jsx";
 axios.defaults.baseURL = "http://localhost:5000/api";
 axios.defaults.withCredentials = true;
 
@@ -44,6 +48,19 @@ function App() {
                     <Route
                         path="/profile/bookings/:id"
                         element={<SingleBookingPage />}
+                    />
+                    <Route path="/profile/admin" element={<AdminPanelPage />} />
+                    <Route
+                        path="/profile/admin/edit-user/:id"
+                        element={<EditUserPage />}
+                    />
+                    {/* <Route
+                        path="/profile/admin/edit-property/:id"
+                        element={<EditPropertyPage />}
+                    /> */}
+                    <Route
+                        path="/profile/admin/edit-booking/:id"
+                        element={<EditBookingPage />}
                     />
                 </Route>
             </Routes>

@@ -16,7 +16,7 @@ import AdminPanelPage from "./pages/AdminPanelPage.jsx";
 import EditUserPage from "./pages/EditUserPage.jsx";
 import EditPropertyPage from "./pages/EditPropertyPage.jsx";
 import EditBookingPage from "./pages/EditBookingPage.jsx";
-axios.defaults.baseURL = "http://sh4rk07h.beget.tech";
+axios.defaults.baseURL = "http://82.202.129.86/api";
 axios.defaults.withCredentials = true;
 
 function App() {

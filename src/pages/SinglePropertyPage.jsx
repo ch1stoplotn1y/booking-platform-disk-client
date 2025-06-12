@@ -618,33 +618,35 @@ export default function SinglePlacePage() {
                     </div>
                 </div>
             )}
-            <div className="grid grid-cols-3 gap-6 mt-8 border border-gray-300 rounded-2xl p-4 font-semibold text-lg">
-                {property.property_reviews.length > 0 &&
-                    property.property_reviews.map((review) => (
-                        <div
-                            key={review.id}
-                            className="flex flex-col gap-2 border border-gray-200 rounded-xl p-4"
-                        >
-                            <div className="flex gap-2 items-center p-3">
-                                <img
-                                    src={
-                                        review.user.avatar
-                                            ? `http://82.202.129.86:80${review.user.avatar}`
-                                            : `http://82.202.129.86:80/static/default_avatar.jpg`
-                                    }
-                                    alt=""
-                                    className="w-10 h-10 rounded-full"
-                                />
-                                <span className="">
-                                    {review.user.firstName}: {review.rating}
-                                </span>
+            {property.property_reviews.length > 0 && (
+                <div className="grid grid-cols-3 gap-6 mt-8 border border-gray-300 rounded-2xl p-4 font-semibold text-lg">
+                    {property.property_reviews.length > 0 &&
+                        property.property_reviews.map((review) => (
+                            <div
+                                key={review.id}
+                                className="flex flex-col gap-2 border border-gray-200 rounded-xl p-4"
+                            >
+                                <div className="flex gap-2 items-center p-3">
+                                    <img
+                                        src={
+                                            review.user.avatar
+                                                ? `http://82.202.129.86:80${review.user.avatar}`
+                                                : `http://82.202.129.86:80/static/default_avatar.jpg`
+                                        }
+                                        alt=""
+                                        className="w-10 h-10 rounded-full"
+                                    />
+                                    <span className="">
+                                        {review.user.firstName}: {review.rating}
+                                    </span>
+                                </div>
+                                <div className="border border-gray-100 rounded-2xl p-3">
+                                    {review.comment}
+                                </div>
                             </div>
-                            <div className="border border-gray-100 rounded-2xl p-3">
-                                {review.comment}
-                            </div>
-                        </div>
-                    ))}
-            </div>
+                        ))}
+                </div>
+            )}
         </div>
     );
 }

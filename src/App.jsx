@@ -18,7 +18,7 @@ import EditPropertyPage from "./pages/EditPropertyPage.jsx";
 import EditBookingPage from "./pages/EditBookingPage.jsx";
 axios.defaults.baseURL = "http://82.202.129.86/api";
 axios.defaults.withCredentials = true;
-
+//routes
 function App() {
     return (
         <UserContextProvider>

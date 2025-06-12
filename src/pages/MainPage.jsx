@@ -182,7 +182,7 @@ export default function MainPage() {
                         <div className="w-full aspect-square relative">
                             {property.property_images.length > 0 && (
                                 <img
-                                    src={`http://http://82.202.129.86:80${
+                                    src={`http://82.202.129.86:80${
                                         property.property_images.find(
                                             (img) => img.isMain
                                         )?.path

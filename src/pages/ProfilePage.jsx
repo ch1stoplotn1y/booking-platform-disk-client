@@ -130,7 +130,7 @@ export default function ProfilePage() {
                         ) : (
                             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-gray-300 group">
                                 <img
-                                    src={`http://localhost:5000${user.avatar}`}
+                                    src={`http://82.202.129.86:80${user.avatar}`}
                                     alt="Аватар"
                                     className="w-full h-full object-cover"
                                 />

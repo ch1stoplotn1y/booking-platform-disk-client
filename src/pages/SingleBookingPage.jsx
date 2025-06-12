@@ -102,7 +102,7 @@ export default function SingleBookingPage() {
                                         className="flex justify-center"
                                     >
                                         <img
-                                            src={`http://localhost:5000${p.path}`}
+                                            src={`http://82.202.129.86:80${p.path}`}
                                             alt=""
                                             className="rounded-2xl w-full h-full object-cover"
                                         />
@@ -223,7 +223,7 @@ export default function SingleBookingPage() {
                         {booking.property.property_images[0] && (
                             <div className="">
                                 <img
-                                    src={`http://localhost:5000${
+                                    src={`http://82.202.129.86:80${
                                         booking.property.property_images.find(
                                             (img) => img.isMain
                                         ).path
@@ -237,7 +237,7 @@ export default function SingleBookingPage() {
                     <div className="grid">
                         {booking.property.property_images[1] && (
                             <img
-                                src={`http://localhost:5000${booking.property.property_images[1].path}`}
+                                src={`http://82.202.129.86:80${booking.property.property_images[1].path}`}
                                 alt=""
                                 className="aspect-square object-cover rounded-2xl"
                             />
@@ -245,7 +245,7 @@ export default function SingleBookingPage() {
                         <div className="overflow-hidden">
                             {booking.property.property_images[2] && (
                                 <img
-                                    src={`http://localhost:5000${booking.property.property_images[2].path}`}
+                                    src={`http://82.202.129.86:80${booking.property.property_images[2].path}`}
                                     alt=""
                                     className="aspect-square object-cover relative top-1 rounded-2xl"
                                 />
@@ -296,8 +296,8 @@ export default function SingleBookingPage() {
                             <img
                                 src={
                                     booking.property.user.avatar
-                                        ? `http://localhost:5000${booking.property.user.avatar}`
-                                        : "http://localhost:5000/static/default_avatar.jpg"
+                                        ? `http://82.202.129.86:80${booking.property.user.avatar}`
+                                        : "http://82.202.129.86:80/static/default_avatar.jpg"
                                 }
                                 alt="host photo"
                                 className="w-full h-full rounded-full border"

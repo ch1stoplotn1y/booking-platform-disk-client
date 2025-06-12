@@ -97,7 +97,7 @@ export default function BookingsPage() {
                                         {booking.property.property_images
                                             .length > 0 ? (
                                             <img
-                                                src={`http://localhost:5000${booking.property.property_images[0].path}`}
+                                                src={`http://82.202.129.86:80${booking.property.property_images[0].path}`}
                                                 alt={booking.property.title}
                                                 className="w-full h-full object-cover"
                                             />

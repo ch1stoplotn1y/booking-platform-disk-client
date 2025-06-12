@@ -144,7 +144,7 @@ export default function SinglePlacePage() {
                                         className="flex justify-center"
                                     >
                                         <img
-                                            src={`http://localhost:5000${p.path}`}
+                                            src={`http://82.202.129.86:80${p.path}`}
                                             alt=""
                                             className="rounded-2xl w-full h-full object-cover" /* Ограничиваем максимальную ширину */
                                         />
@@ -191,7 +191,7 @@ export default function SinglePlacePage() {
                         {property.property_images[0] && (
                             <div className="">
                                 <img
-                                    src={`http://localhost:5000${
+                                    src={`http://82.202.129.86:80${
                                         property.property_images.find(
                                             (img) => img.isMain
                                         ).path
@@ -205,7 +205,7 @@ export default function SinglePlacePage() {
                     <div className="grid">
                         {property.property_images[1] && (
                             <img
-                                src={`http://localhost:5000${property.property_images[1].path}`}
+                                src={`http://82.202.129.86:80${property.property_images[1].path}`}
                                 alt=""
                                 className="aspect-square object-cover rounded-2xl"
                             />
@@ -213,7 +213,7 @@ export default function SinglePlacePage() {
                         <div className="overflow-hidden">
                             {property.property_images[2] && (
                                 <img
-                                    src={`http://localhost:5000${property.property_images[2].path}`}
+                                    src={`http://82.202.129.86:80${property.property_images[2].path}`}
                                     alt=""
                                     className="aspect-square object-cover relative top-1 rounded-2xl"
                                 />
@@ -468,8 +468,8 @@ export default function SinglePlacePage() {
                             <img
                                 src={
                                     host.avatar
-                                        ? `http://localhost:5000${host.avatar}`
-                                        : "http://localhost:5000/static/default_avatar.jpg"
+                                        ? `http://82.202.129.86:80${host.avatar}`
+                                        : "http://82.202.129.86:80/static/default_avatar.jpg"
                                 }
                                 alt="host photo"
                                 className="w-full h-full rounded-full border border-gray-200"
@@ -629,8 +629,8 @@ export default function SinglePlacePage() {
                                 <img
                                     src={
                                         review.user.avatar
-                                            ? `http://localhost:5000${review.user.avatar}`
-                                            : `http://localhost:5000/static/default_avatar.jpg`
+                                            ? `http://82.202.129.86:80${review.user.avatar}`
+                                            : `http://82.202.129.86:80/static/default_avatar.jpg`
                                     }
                                     alt=""
                                     className="w-10 h-10 rounded-full"

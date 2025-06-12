@@ -131,7 +131,7 @@ export default function PropertiesPage() {
                                     <div className="h-48 overflow-hidden">
                                         {property.property_images.length > 0 ? (
                                             <img
-                                                src={`http://localhost:5000${property.property_images[0].path}`}
+                                                src={`http://82.202.129.86:80${property.property_images[0].path}`}
                                                 alt={property.title}
                                                 className="w-full h-full object-cover"
                                             />

@@ -370,7 +370,7 @@ export default function AddPropertyForm() {
                             >
                                 <img
                                     src={
-                                        "http://localhost:5000/static/" +
+                                        "http://82.202.129.86:80/static/" +
                                         photo.link
                                     }
                                     alt=""

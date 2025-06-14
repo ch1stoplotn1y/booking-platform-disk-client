@@ -44,7 +44,21 @@ export default function SingleUserProfile() {
         <div className="max-w-6xl mx-auto">
             <div className="text-center max-w-2xl mx-auto p-4">
                 {/* Аватар */}
-                <div className="w-20 h-20">{user.avatar === null}</div>
+                <div className="w-20 h-20">
+                    {user.avatar === null ? (
+                        <img
+                            src={`http://82.202.129.86:80/static/default_avatar.jpg`}
+                            alt="Аватар"
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <img
+                            src={`http://82.202.129.86:80${user.avatar}`}
+                            alt="Аватар"
+                            className="w-full h-full object-cover"
+                        />
+                    )}
+                </div>
 
                 {/* Основная информация */}
                 <div className="text-center mb-8">

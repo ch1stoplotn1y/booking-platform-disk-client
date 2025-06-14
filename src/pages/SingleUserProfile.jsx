@@ -4,19 +4,42 @@ import axios from "axios";
 export default function SingleUserProfile() {
     const { id } = useParams();
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
     useEffect(() => {
         if (!id) {
+            setError("ID пользователя не указан");
+            setLoading(false);
             return;
         }
-        axios
-            .get(`/users/${id}`)
-            .then((res) => {
-                setUser(res.data);
-            })
-            .catch((error) => {
-                console.error("Ошибка загрузки ussr:", error);
-            });
+
+        const fetchUser = async () => {
+            try {
+                const response = await axios.get(`/users/${id}`);
+                setUser(response.data);
+            } catch (err) {
+                console.error("Ошибка загрузки пользователя:", err);
+                setError("Не удалось загрузить данные пользователя");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchUser();
     }, [id]);
+
+    if (loading) {
+        return <div className="text-center py-8">Загрузка...</div>;
+    }
+
+    if (error) {
+        return <div className="text-center py-8 text-red-500">{error}</div>;
+    }
+
+    if (!user) {
+        return <div className="text-center py-8">Пользователь не найден</div>;
+    }
     return (
         <div className="max-w-6xl mx-auto">
             <div className="text-center max-w-2xl mx-auto p-4">

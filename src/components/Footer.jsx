@@ -92,8 +92,7 @@ export default function Footer() {
             borderRadius: "12px",
             padding: "0",
             boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-            maxWidth: "90%",
-            width: "100%",
+            width: "fit",
         },
         overlay: {
             backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -162,25 +161,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Контакты */}
-                    <div>
-                        <h4 className="font-semibold text-lg mb-4">Контакты</h4>
-                        <ul className="space-y-3 text-gray-400">
-                            <li className="flex items-start">
-                                <FaMapMarkerAlt className="mt-1 mr-3 flex-shrink-0" />
-                                <span>г. Москва, ул. Примерная, 123</span>
-                            </li>
-                            <li className="flex items-center">
-                                <FaPhone className="mr-3" />
-                                <span>+7 (123) 456-78-90</span>
-                            </li>
-                            <li className="flex items-center">
-                                <FaEnvelope className="mr-3" />
-                                <span>hello@roamstay.com</span>
-                            </li>
-                        </ul>
-                    </div>
-
                     {/* Соцсети */}
                     <div>
                         <h4 className="font-semibold text-lg mb-4">
@@ -188,19 +168,19 @@ export default function Footer() {
                         </h4>
                         <div className="flex space-x-4">
                             <a
-                                href="#"
+                                href="https://www.instagram.com/"
                                 className="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition"
                             >
                                 <FaInstagram />
                             </a>
                             <a
-                                href="#"
+                                href="https://x.com/"
                                 className="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition"
                             >
                                 <FaTwitter />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.facebook.com/"
                                 className="bg-gray-800 hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition"
                             >
                                 <FaFacebookF />
@@ -215,20 +195,6 @@ export default function Footer() {
                         © {new Date().getFullYear()} RoamStay. Все права
                         защищены.
                     </p>
-                    <div className="flex space-x-6">
-                        <Link
-                            to="/privacy"
-                            className="text-gray-500 hover:text-white text-sm transition"
-                        >
-                            Политика конфиденциальности
-                        </Link>
-                        <Link
-                            to="/terms"
-                            className="text-gray-500 hover:text-white text-sm transition"
-                        >
-                            Условия использования
-                        </Link>
-                    </div>
                 </div>
             </div>
 

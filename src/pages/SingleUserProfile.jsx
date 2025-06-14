@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import axios from "axios";
+import * as Icon from "../icons/iconsStorage.jsx";
 export default function SingleUserProfile() {
     const { id } = useParams();
     const [user, setUser] = useState(null);

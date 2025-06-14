@@ -292,7 +292,10 @@ export default function SingleBookingPage() {
             <div className="mt-2 border rounded-2xl w-full p-4 shadow-sm">
                 <div className="flex flex-col sm:flex-row gap-6 items-center">
                     <div className="w-24 h-24">
-                        <Link className="">
+                        <Link
+                            to={`/users/${booking.property.user.id}`}
+                            className=""
+                        >
                             <img
                                 src={
                                     booking.property.user.avatar

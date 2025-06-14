@@ -16,6 +16,7 @@ import AdminPanelPage from "./pages/AdminPanelPage.jsx";
 import EditUserPage from "./pages/EditUserPage.jsx";
 import EditPropertyPage from "./pages/EditPropertyPage.jsx";
 import EditBookingPage from "./pages/EditBookingPage.jsx";
+import SingleUserProfile from "./pages/SingleUserProfile.jsx";
 axios.defaults.baseURL = "http://82.202.129.86/api";
 axios.defaults.withCredentials = true;
 //routes
@@ -58,6 +59,7 @@ function App() {
                         path="/profile/admin/edit-booking/:id"
                         element={<EditBookingPage />}
                     />
+                    <Route path="/users/:id" element={<SingleUserProfile />} />
                 </Route>
             </Routes>
         </UserContextProvider>

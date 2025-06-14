@@ -464,7 +464,7 @@ export default function SinglePlacePage() {
             <div className="mt-8 border border-gray-300 rounded-2xl w-fit">
                 <div className="flex gap-6 items-center p-5">
                     <div className="w-20 h-20">
-                        <Link className="">
+                        <Link to={`/users/${host.id}`} className="">
                             <img
                                 src={
                                     host.avatar

@@ -45,18 +45,18 @@ export default function SingleUserProfile() {
         <div className="max-w-6xl mx-auto">
             <div className="text-center max-w-2xl mx-auto p-4">
                 {/* Аватар */}
-                <div className="w-20 h-20">
+                <div className="w-48 h-48 mx-auto">
                     {user.avatar === null ? (
                         <img
                             src={`http://82.202.129.86:80/static/default_avatar.jpg`}
                             alt="Аватар"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full rounded-full object-cover"
                         />
                     ) : (
                         <img
                             src={`http://82.202.129.86:80${user.avatar}`}
                             alt="Аватар"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full rounded-full object-cover"
                         />
                     )}
                 </div>
@@ -90,11 +90,6 @@ export default function SingleUserProfile() {
                 {/* Детальная информация */}
                 <div className="bg-white rounded-xl shadow-sm p-6 mb-8 text-left">
                     <div className="space-y-4">
-                        <div className="flex items-center gap-3">
-                            <Icon.CheckInIcon />
-                            <span className="text-gray-700">{user.email}</span>
-                        </div>
-
                         <div className="flex items-center gap-3">
                             <Icon.CheckInIcon />
                             <span className="text-gray-700">

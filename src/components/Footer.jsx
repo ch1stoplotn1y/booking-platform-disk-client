@@ -1,16 +1,106 @@
 import { Link } from "react-router-dom";
 import * as Icon from "../icons/iconsStorage";
 import {
-    FaAirbnb,
     FaInstagram,
     FaTwitter,
     FaFacebookF,
     FaMapMarkerAlt,
     FaPhone,
     FaEnvelope,
+    FaTimes,
 } from "react-icons/fa";
+import { useState } from "react";
+import Modal from "react-modal";
 
 export default function Footer() {
+    const [modalContent, setModalContent] = useState(null);
+
+    const openModal = (content) => {
+        setModalContent(content);
+    };
+
+    const closeModal = () => {
+        setModalContent(null);
+    };
+
+    const aboutContent = (
+        <div className="p-6 max-w-md">
+            <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold">О компании RoamStay</h2>
+                <button
+                    onClick={closeModal}
+                    className="text-gray-500 hover:text-gray-700"
+                >
+                    <FaTimes />
+                </button>
+            </div>
+            <p className="mb-4">
+                RoamStay - это платформа для поиска уникального жилья по всей
+                России. Мы помогаем путешественникам находить уютные места для
+                отдыха.
+            </p>
+            <p>
+                Наша миссия - сделать ваш отдых незабываемым, предоставляя
+                доступ к лучшим вариантам размещения.
+            </p>
+        </div>
+    );
+
+    const contactsContent = (
+        <div className="p-6 max-w-md">
+            <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold">Наши контакты</h2>
+                <button
+                    onClick={closeModal}
+                    className="text-gray-500 hover:text-gray-700"
+                >
+                    <FaTimes />
+                </button>
+            </div>
+            <div className="space-y-4">
+                <div className="flex items-start">
+                    <FaMapMarkerAlt className="mt-1 mr-3 flex-shrink-0" />
+                    <span>г. Москва, ул. Примерная, 123</span>
+                </div>
+                <div className="flex items-center">
+                    <FaPhone className="mr-3" />
+                    <span>+7 (123) 456-78-90</span>
+                </div>
+                <div className="flex items-center">
+                    <FaEnvelope className="mr-3" />
+                    <span>hello@roamstay.com</span>
+                </div>
+            </div>
+            <div className="mt-6">
+                <h3 className="font-semibold mb-2">Режим работы:</h3>
+                <p>Пн-Пт: 9:00 - 18:00</p>
+                <p>Сб-Вс: 10:00 - 16:00</p>
+            </div>
+        </div>
+    );
+
+    // Стили для модального окна
+    const customStyles = {
+        content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+            border: "none",
+            borderRadius: "12px",
+            padding: "0",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+            maxWidth: "90%",
+            width: "100%",
+        },
+        overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 1000,
+        },
+    };
+
     return (
         <footer className="bg-gray-800 text-white pt-12 pb-6 mt-16 rounded-2xl">
             <div className="max-w-7xl mx-auto px-4">
@@ -54,20 +144,20 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link
-                                    to="/"
-                                    className="text-gray-400 hover:text-white transition"
+                                <button
+                                    onClick={() => openModal(aboutContent)}
+                                    className="text-gray-400 hover:text-white transition text-left w-full"
                                 >
                                     О нас
-                                </Link>
+                                </button>
                             </li>
                             <li>
-                                <Link
-                                    to="/"
-                                    className="text-gray-400 hover:text-white transition"
+                                <button
+                                    onClick={() => openModal(contactsContent)}
+                                    className="text-gray-400 hover:text-white transition text-left w-full"
                                 >
                                     Контакты
-                                </Link>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -141,6 +231,15 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+
+            <Modal
+                isOpen={!!modalContent}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Информационное окно"
+            >
+                {modalContent}
+            </Modal>
         </footer>
     );
 }

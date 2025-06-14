@@ -73,8 +73,7 @@ export default function Footer() {
             </div>
             <div className="mt-6">
                 <h3 className="font-semibold mb-2">Режим работы:</h3>
-                <p>Пн-Пт: 9:00 - 18:00</p>
-                <p>Сб-Вс: 10:00 - 16:00</p>
+                <p>Круглосуточно, 24/7</p>
             </div>
         </div>
     );
@@ -104,7 +103,7 @@ export default function Footer() {
         <footer className="bg-gray-800 text-white pt-12 pb-6 mt-16 rounded-2xl">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Основные разделы */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div className="grid grid-cols-3 md:grid-cols-3 gap-8 mb-8 justify-items-center md:justify-items-start">
                     {/* О компании */}
                     <div>
                         <h3 className="text-xl font-bold mb-4 flex items-center">
@@ -143,20 +142,20 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <button
+                                <div
                                     onClick={() => openModal(aboutContent)}
                                     className="text-gray-400 hover:text-white transition text-left w-full"
                                 >
                                     О нас
-                                </button>
+                                </div>
                             </li>
                             <li>
-                                <button
+                                <div
                                     onClick={() => openModal(contactsContent)}
                                     className="text-gray-400 hover:text-white transition text-left w-full"
                                 >
                                     Контакты
-                                </button>
+                                </div>
                             </li>
                         </ul>
                     </div>

@@ -1,5 +1,20 @@
+import { useState, useEffect } from "react";
 export default function SingleUserProfile() {
-    //ccc
+    const { id } = useParams();
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        if (!id) {
+            return;
+        }
+        axios
+            .get(`/users/${id}`)
+            .then((res) => {
+                setUser(res.data);
+            })
+            .catch((error) => {
+                console.error("Ошибка загрузки ussr:", error);
+            });
+    }, [id]);
     return (
         <div className="max-w-6xl mx-auto">
             <div className="text-center max-w-2xl mx-auto p-4">
@@ -26,8 +41,8 @@ export default function SingleUserProfile() {
                     ) : (
                         <div className="text-gray-500 mb-4">
                             {user.properties.length > 0
-                                ? "Ваши гости еще не оставили отзывов"
-                                : "Вы еще не размещали объявлений"}
+                                ? "Гости еще не оставляли отзывов об этом хозяине"
+                                : "У этого хозяина пока нет объявлений"}
                         </div>
                     )}
                 </div>
